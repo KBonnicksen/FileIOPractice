@@ -35,9 +35,10 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(296, 51);
+            this.btnImport.Location = new System.Drawing.Point(222, 41);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(129, 31);
+            this.btnImport.Size = new System.Drawing.Size(97, 25);
             this.btnImport.TabIndex = 0;
             this.btnImport.Text = "Import file";
             this.btnImport.UseVisualStyleBackColor = true;
@@ -45,16 +46,18 @@
             // 
             // txtFilePath
             // 
-            this.txtFilePath.Location = new System.Drawing.Point(12, 55);
+            this.txtFilePath.Location = new System.Drawing.Point(9, 45);
+            this.txtFilePath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(239, 22);
+            this.txtFilePath.Size = new System.Drawing.Size(180, 20);
             this.txtFilePath.TabIndex = 1;
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(22, 121);
+            this.btnRead.Location = new System.Drawing.Point(16, 98);
+            this.btnRead.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(132, 40);
+            this.btnRead.Size = new System.Drawing.Size(99, 32);
             this.btnRead.TabIndex = 2;
             this.btnRead.Text = "Read file contents";
             this.btnRead.UseVisualStyleBackColor = true;
@@ -62,12 +65,13 @@
             // 
             // frmImportFile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 182);
+            this.ClientSize = new System.Drawing.Size(355, 148);
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.btnImport);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmImportFile";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FrmImportFile_Load);

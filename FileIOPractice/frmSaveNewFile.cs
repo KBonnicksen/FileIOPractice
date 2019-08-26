@@ -30,7 +30,7 @@ namespace FileIOPractice
         {
             SaveFileDialog saveDialog = new SaveFileDialog()
             {
-                Filter = TxtFileFilters,
+                //Filter = TxtFileFilters,
                 RestoreDirectory = true
             };
             if (saveDialog.ShowDialog() == DialogResult.OK)
