@@ -13,6 +13,9 @@ namespace FileIOPractice
 {
     public partial class frmImportFile : Form
     {
+        /// <summary>
+        /// File path of the file being uploaded
+        /// </summary>
         private string FilePath = string.Empty;
         public const string TxtFileFilters = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
 
@@ -21,10 +24,11 @@ namespace FileIOPractice
             InitializeComponent();
         }
 
-        private void FrmImportFile_Load(object sender, EventArgs e)
-        {
-        }
-
+        /// <summary>
+        /// Allows the user to upload a file to this project
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog openDialog = new OpenFileDialog
@@ -41,6 +45,12 @@ namespace FileIOPractice
             }
         }
 
+        /// <summary>
+        /// If user file path is valid, opens a new window that 
+        /// reads the contents of the users file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRead_Click(object sender, EventArgs e)
         {
             if(String.IsNullOrEmpty(FilePath))

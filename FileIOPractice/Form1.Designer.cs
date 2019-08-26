@@ -70,7 +70,6 @@
             this.Controls.Add(this.btnImport);
             this.Name = "frmImportFile";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FrmImportFile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

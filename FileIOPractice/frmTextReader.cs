@@ -27,6 +27,11 @@ namespace FileIOPractice
 
         private void FrmTextReader_Load(object sender, EventArgs e)
         {
+            ReadFileInfo();
+        }
+
+        private void ReadFileInfo()
+        {
             List<String> textLines = File.ReadLines(FilePath).ToList();
             foreach (string line in textLines)
             {
@@ -37,19 +42,36 @@ namespace FileIOPractice
         private void BtnEncrypt_Click(object sender, EventArgs e)
         {
             File.Encrypt(FilePath);
+            //StringBuilder encryptedData = new StringBuilder();
+            FileAttributes attributes = File.GetAttributes(FilePath);
+            if((attributes & FileAttributes.Encrypted) == FileAttributes.Encrypted)
+                MessageBox.Show("Tester: these are encrypted");
+           
+
+            string encryptedData = File.ReadAllText(FilePath);
+
 
             // TODO: Validate that it was encrypted
 
-            SaveNewFile("Successfully encrypted.");
+            SaveNewFile("Successfully encrypted.", encryptedData);
         }
 
-        private void SaveNewFile(String caption)
+        private void SaveNewFile(String caption, string altData)
         {
             var result = MessageBox.Show(this, "Would you like to save this content to a new file?", caption, MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
-                // save file to new location
+                SaveFileDialog saveDialog = new SaveFileDialog()
+                {
+                    Filter = TxtFileFilters,
+                    RestoreDirectory = true
+                };
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string savePath = saveDialog.FileName;
+                    File.WriteAllText(savePath, altData);
+                }
             }
             else
             {
@@ -62,9 +84,10 @@ namespace FileIOPractice
         {
             File.Decrypt(FilePath);
 
+            string decryptedData = File.ReadAllText(FilePath);
             // TODO: Validate that it was encrypted
 
-            SaveNewFile("Successfully decrypted.");
+            SaveNewFile("Successfully decrypted.", decryptedData);
         }
     }
 }
