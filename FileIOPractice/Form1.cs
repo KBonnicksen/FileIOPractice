@@ -61,5 +61,10 @@ namespace FileIOPractice
                 reader.ShowDialog();
             }
         }
+
+        private void FrmImportFile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
