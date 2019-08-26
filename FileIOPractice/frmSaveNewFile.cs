@@ -12,9 +12,6 @@ namespace FileIOPractice
 {
     public partial class frmSaveNewFile : Form
     {
-        //I have this on two of my forms, how would you handle this?
-        //Pass it through the forms?
-        public const string TxtFileFilters = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
         private string FilePath;
 
         public frmSaveNewFile(string message, string fileName)

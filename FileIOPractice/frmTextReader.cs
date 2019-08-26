@@ -13,7 +13,12 @@ namespace FileIOPractice
 {
     public partial class frmTextReader : Form
     {
+
+        //I have this on two of my forms, how would you handle this?
+        //Pass it through the forms?
+        public const string TxtFileFilters = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
         private readonly string FilePath;
+
         public frmTextReader(String filePath)
         {
             FilePath = filePath;
@@ -22,10 +27,6 @@ namespace FileIOPractice
 
         private void FrmTextReader_Load(object sender, EventArgs e)
         {
-            //StreamReader reader = new StreamReader(FilePath);
-            //string text = reader.ReadToEnd();
-            //lstDataReader.Text = text;
-
             List<String> textLines = File.ReadLines(FilePath).ToList();
             foreach (string line in textLines)
             {
@@ -36,22 +37,34 @@ namespace FileIOPractice
         private void BtnEncrypt_Click(object sender, EventArgs e)
         {
             File.Encrypt(FilePath);
-            MessageBox.Show("Your file has been encrypted.", "Would you like to save its contents to a new file?");
-            //OpenSaveForm("Your file has been successfully Encrypted");
+
+            // TODO: Validate that it was encrypted
+
+            SaveNewFile("Successfully encrypted.");
         }
 
+        private void SaveNewFile(String caption)
+        {
+            var result = MessageBox.Show(this, "Would you like to save this content to a new file?", caption, MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                // save file to new location
+            }
+            else
+            {
+                // "would you like to upload another file?
+                // Redirect or just close program
+            }
+        }
 
         private void BtnDecrypt_Click(object sender, EventArgs e)
         {
             File.Decrypt(FilePath);
-            //OpenSaveForm("Your file has been successfully Decrypted");
-        }
 
-        private static void OpenSaveForm(string message)
-        {
-            //Form saveYesNo = new frmSaveNewFile(message, FilePath);
-            //saveYesNo.ShowDialog();
-            //ActiveForm.Dispose();
+            // TODO: Validate that it was encrypted
+
+            SaveNewFile("Successfully decrypted.");
         }
     }
 }
