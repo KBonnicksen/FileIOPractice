@@ -14,8 +14,7 @@ namespace FileIOPractice
     public partial class frmImportFile : Form
     {
         private string FilePath = string.Empty;
-        private string Contents = string.Empty;
-        const string TxtFileFilters = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+        public const string TxtFileFilters = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
 
         public frmImportFile()
         {

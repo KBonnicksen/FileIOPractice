@@ -32,5 +32,26 @@ namespace FileIOPractice
                 lstDataReader.Items.Add(line);
             }
         }
+
+        private void BtnEncrypt_Click(object sender, EventArgs e)
+        {
+            File.Encrypt(FilePath);
+            MessageBox.Show("Your file has been encrypted.", "Would you like to save its contents to a new file?");
+            //OpenSaveForm("Your file has been successfully Encrypted");
+        }
+
+
+        private void BtnDecrypt_Click(object sender, EventArgs e)
+        {
+            File.Decrypt(FilePath);
+            //OpenSaveForm("Your file has been successfully Decrypted");
+        }
+
+        private static void OpenSaveForm(string message)
+        {
+            //Form saveYesNo = new frmSaveNewFile(message, FilePath);
+            //saveYesNo.ShowDialog();
+            //ActiveForm.Dispose();
+        }
     }
 }

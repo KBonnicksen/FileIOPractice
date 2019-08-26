@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.lstDataReader = new System.Windows.Forms.ListBox();
+            this.btnEncrypt = new System.Windows.Forms.Button();
+            this.btnDecrypt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstDataReader
@@ -40,11 +42,33 @@
             this.lstDataReader.Size = new System.Drawing.Size(801, 452);
             this.lstDataReader.TabIndex = 0;
             // 
+            // btnEncrypt
+            // 
+            this.btnEncrypt.Location = new System.Drawing.Point(241, 467);
+            this.btnEncrypt.Name = "btnEncrypt";
+            this.btnEncrypt.Size = new System.Drawing.Size(123, 40);
+            this.btnEncrypt.TabIndex = 1;
+            this.btnEncrypt.Text = "Encrypt File";
+            this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.Click += new System.EventHandler(this.BtnEncrypt_Click);
+            // 
+            // btnDecrypt
+            // 
+            this.btnDecrypt.Location = new System.Drawing.Point(418, 467);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(123, 40);
+            this.btnDecrypt.TabIndex = 2;
+            this.btnDecrypt.Text = "Decrypt File";
+            this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.BtnDecrypt_Click);
+            // 
             // frmTextReader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 519);
+            this.Controls.Add(this.btnDecrypt);
+            this.Controls.Add(this.btnEncrypt);
             this.Controls.Add(this.lstDataReader);
             this.Name = "frmTextReader";
             this.Text = "frmTextReader";
@@ -56,5 +80,7 @@
         #endregion
 
         private System.Windows.Forms.ListBox lstDataReader;
+        private System.Windows.Forms.Button btnEncrypt;
+        private System.Windows.Forms.Button btnDecrypt;
     }
 }
